@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Leaven Portfolio</title>
+    <meta name="keywords" content="David Leaven, Portfolio, Software Engineer, Web Developer" />
+    <meta name="description" content="The software development portfolio for David Leaven" />
+    <meta name="author" content="David Alan Leaven" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="superslides.css " rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        /*The start of the page overlay section*/
+        .loader {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1000;
+        }
+
+        .loader .inner {
+            width: 100%;
+            height: 100%;
+            background: url(loader.gif) center center no-repeat;
+        }
+
+        /*The end of the page overlay section*/
+
+        /*The start of the image carousel section with title */
+        .overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .slides-navigation {
+            z-index: 6;
+        }
+        .slides-navigation .prev,
+        .slides-navigation .next {
+            width: 47px;
+            height: 47px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .slides-navigation a.prev {
+            left: 20px;
+            background-image: url(prev.png);
+        }
+        .slides-navigation a.next {
+            right: 20px;
+            background-image: url(next.png);
+        }
+        .titleMessage {
+            position: absolute;
+            width: 100%;
+            height: 250px;
+            top: 50%;
+            z-index: 5;
+            text-align: center;
+            margin-top: -125px;
+        }
+        .titleMessage .heading p {
+            color: #fff;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+            font-weight: 100;
+            letter-spacing: 7px;
+        }
+        .titleMessage .heading .main {
+            font-size: 50px;
+        }
+        .titleMessage .heading .sub {
+            font-size: 23px;
+        }
+        /*The end of the image carousel section with title */
+        /**The start of the Navigation Section*/
+        #navigation {
+            padding: 20px 10px;
+            width: 100%;
+            z-index: 100;
+            background-color: #000;
+        }
+        .navbar-toggler-icon {
+            background: url(menu.png);
+            background-size: 100%;
+        }
+        #navigation li {
+            padding: 0 10px;
+        }
+        #navigation li a {
+            color: #fff;
+        }
+        .fixedNav #navigation {
+            position: fixed;
+            top: 0;
+        }
+        /**The end of the Navigation Section*/
+
+        /*The start of the About Me section*/
+        .section {
+            padding: 100px 0;
+        }
+        #about p {
+            font-size: 18px;
+            line-height: 40px;
+        }
+        .aboutImage {
+            max-width: 100%;
+        }
+        /*The end of the About Me section*/
+        /*The start of the Portfolio Section below */
+        .section .heading {
+            text-align: center;
+            padding-bottom: 40px;
+            width: 100%;
+        }
+        .itemsContainer {
+            width: 100%;
+        }
+        .item >a> img {
+            width: 100%;
+            transition: all 0.2s linear, 0.2s;
+        }
+         .item {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+         .item:hover img {
+            transform: scale(1.05, 1.05);
+        }
+        /*The end of the Portfolio Section*/
+        /*The start of the contact section*/
+        .contactButton:hover {
+            text-decoration: none;
+            background-color: #000;
+        }
+        /*The end of the contact section*/
+    </style>
+</head>
+<body>
+    <!-- The start of the Page Loading Overlay Section-->
+    <div class="loader">
+        <div class="inner"></div>
+    </div>
+    <!-- The end of the Page Loading Overlay Section-->
+    <!-- The start of the Image slider section with title-->
+    <div id="slides">
+        <div class="overlay"></div>
+        <div class="slides-container">
+            <img src="slide1.jpg" alt="A laptop and a cellphone" />
+            <img src="slide2.jpeg" alt="computer code" />
+            <img src="slide3.jpeg" alt="computer code on a screen" />
+        </div>
+        <div class="titleMessage">
+            <div class="heading">
+                <p class="main">DAVID ALAN LEAVEN</p>
+                <p class="sub typed"></p>
+            </div>
+        </div>
+        <nav class="slides-navigation">
+            <a href="#" class="next"></a>
+            <a href="#" class="prev"></a>
+        </nav>
+    </div>
+    <!--The end of the Image Slider with Title section-->
+    <!--The start of the Navigation Section -->
+    <nav id="navigation" class="navbar navbar-expand-lg navbar-white">
+        <a class="navbar-brand text-white" href="#">Leaven Portfolio</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--The end of the Navigation Section -->
+    <!--The start of the About Section-->
+    <div id="about" class="section bg-success">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <img class="aboutImage" src="profilePic1.jpg" alt="David's picture" />
+                </div>
+                <div class="col-md-7 text-white">
+                    <h1>About me</h1>
+                    <p>Hello! I'm David Leaven. I currently live in Virginia Beach, Virginia, and I recently
+                        received my master's degree (3.975 GPA) in information technology with a concentration in Web
+                        design
+                        from Southern New Hampshire University. I have experience creating projects using different web
+                        technologies (e.g. HTML5, CSS3, JavaScript, and Bootstrap). Furthermore, besides my formal
+                        education, I enjoy watching YouTube videos
+                        and Udemy videos to further my knowledge about web development, and I also enjoy using
+                        Codecademy or Freecodecamp to get more hands-on-practice
+                        with the latest technologies. Lastly, I am passionate about software development, and I am
+                        excited to start my career very soon.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--The end of the About Section-->
+    <!--The start of the Portfolio Section-->
+    <div id="projects" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="heading">
+                    <h2>Projects</h2>
+                </div>
+                <div class="itemsContainer d-md-flex justify-content-center">
+                    <!--First Row of Portfolio Section-->
+                            <div class="item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                              <a href="https://dleaven29.github.io/IT700CapstoneTheHelpingHand/" target="_blank">
+                                <img src="capstoneProjectSmallPic.png" alt="My capstone project from graduate school called The Helping Hand"/>
+                                <div class="imageOverlay"></div>
+                            </a>
+                               
+                            </div>
+                            <div class="item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                              <a href="https://dleaven29.github.io/formValidator/" target="_blank">
+                                <img src="formValidatorSmallPic.png" alt="A registration page" />  
+                              </a>
+                              <div class="imageOverlay"></div>
+                            </div>
+                            <div class="item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <a href="https://dleaven29.github.io/jsCalculator/" target="_blank">
+                                  <img src="jsCalculatorSmallPic.png" alt="A calculator" />
+                                </a>
+                                <div class="imageOverlay"></div>
+                            </div>
+                    </div>
+                </div>
+                    <!--End of First Row of Portfolio Section-->
+                    <!--Second Row of Portfolio Section-->
+                    <div class="row">
+                      <div class="itemsContainer d-md-flex justify-content-center pt-md-2">
+                          <div class="item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                            <a href="https://dleaven29.github.io/movieSeatBooking/" target="_blank">
+                              <img src="movieSeatBookingSmallPic.png" alt="A web page that allows a user to choose a movie and a seat or seats.  The web page provides the number of seats selected and the total price." />
+                            </a>
+                            <div class="imageOverlay"></div>
+                           </div>
+                           <div class="item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                              <a href="https://dleaven29.github.io/shoppingList/" target="_blank">
+                                <img src="shoppingListSmallPic.png" alt="A shopping list project"/>
+                              </a>
+                              <div class="imageOverlay"></div>
+                            </div>
+                            <div class="item col-xs-6 col-sm-4 col-md-3 col-lg-3">  
+                              <a href="https://dleaven29.github.io/customVideoPlayer/" target="_blank">
+                                <img src="customVideoPlayerSmallPic.png" alt="A custom video player" />
+                              </a>
+                              <div class="imageOverlay"></div>
+                            </div>
+                      </div>
+                    </div>  
+                    <!--End of Second Row of Portfolio Section-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--The end of the Portfolio Section-->
+    <!--The start of the Contact section-->
+    <div id="contact" class="bg-success text-white mt-4 contactSection section">
+        <div class="col-md-12 text-center">
+            <div class="subHeading">Like what you see?</div>
+            <h2>I'd love to hear from you.</h2>
+            <a href="mailTo:dleaven29@gmail.com"
+                class="contactButton d-inline-block mt-4 py-4 px-4 text-white border border-white rounded">Email me!</a>
+        </div>
+    </div>
+    <!--The end of the Contact section-->
+    <!-- The start of the copyright section-->
+    <div class="copyrightSection text-white py-4 px-1" style="background-color:#000;">
+        <div class="col-md-12 text-center">
+            <p class="m-0">&copy; Copyright David Alan Leaven 2023</p>
+        </div>
+    </div>
+    <!-- The end of the copyright section-->
+    <script src="jquery.superslides.min.js"></script>
+    <script src="typed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
